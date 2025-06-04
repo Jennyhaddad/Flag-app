@@ -9,9 +9,15 @@ const useCountries = () => {
   useEffect(() => {
     const url = "https://restcountries.com/v3.1/all";
 
+
     const fetchCountries = async () => {
       try {
-        const response = await fetch(url);
+        const response = await fetch(url, {
+          headers: {
+            Accept: "application/json",
+          },
+        });
+        
 
         console.log("Response object:", response);
 
@@ -21,7 +27,8 @@ const useCountries = () => {
 
         const data = await response.json();
 
-        console.log("Fetched countries:", data);
+        console.log("Fetching countries from:", url);
+
 
         setCountries(data);
       } catch (err) {
