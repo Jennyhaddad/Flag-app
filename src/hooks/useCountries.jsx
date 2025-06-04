@@ -13,7 +13,6 @@ const useCountries = () => {
       try {
         const response = await fetch(url);
 
-        /
         console.log("Response object:", response);
 
         if (!response.ok) {
