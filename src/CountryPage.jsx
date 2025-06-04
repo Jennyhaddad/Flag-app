@@ -8,7 +8,7 @@ function CountryPage() {
   const [neighborCountries, setNeighborCountries] = useState([]);
   const navigate = useNavigate();
 
-  // Kolla dark mode från body-klassen
+  // Dark mode kontroll
   useEffect(() => {
     const checkDarkMode = () => {
       const isDark = document.body.classList.contains("dark-mode");
@@ -24,18 +24,26 @@ function CountryPage() {
 
   // Hämta land + grannländer
   useEffect(() => {
-    fetch(`https://restcountries.com/v3.1/name/${countryName}`)
-      .then((res) => res.json())
+    const encodedName = encodeURIComponent(countryName);
+    fetch(`https://restcountries.com/v3.1/name/${encodedName}`)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! Status: ${res.status}`);
+        }
+        return res.json();
+      })
       .then((data) => {
+        if (!data || data.length === 0) {
+          throw new Error("Country not found");
+        }
+
         const countryData = data[0];
         setCountry(countryData);
 
         if (countryData.borders?.length > 0) {
           const neighborCodes = countryData.borders;
           const neighborPromises = neighborCodes.map((code) =>
-            fetch(`https://restcountries.com/v3.1/alpha/${code}`).then((res) =>
-              res.json()
-            )
+            fetch(`https://restcountries.com/v3.1/alpha/${code}`).then((res) => res.json())
           );
 
           Promise.all(neighborPromises).then((neighbors) => {
@@ -45,7 +53,9 @@ function CountryPage() {
           setNeighborCountries([]);
         }
       })
-      .catch((error) => console.error("Error fetching country:", error));
+      .catch((error) => {
+        console.error("Error fetching country:", error);
+      });
   }, [countryName]);
 
   if (!country) return <h2 className="loading">Loading ...</h2>;
