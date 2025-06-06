@@ -2,7 +2,12 @@ const fetch = require("node-fetch");
 
 exports.handler = async function () {
   try {
-    const response = await fetch("https://restcountries.com/v3.1/all");
+    const response = await fetch("https://restcountries.com/v3.1/all", {
+      headers: {
+        "User-Agent": "FlagApp/1.0",
+        "Accept": "application/json"
+      }
+    });
 
     if (!response.ok) {
       return {
@@ -12,7 +17,6 @@ exports.handler = async function () {
     }
 
     const data = await response.json();
-
     return {
       statusCode: 200,
       body: JSON.stringify(data),
