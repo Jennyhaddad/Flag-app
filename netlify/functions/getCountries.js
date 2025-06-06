@@ -1,9 +1,12 @@
-const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
-
+const https = require("https");
 
 exports.handler = async function () {
   try {
-    const response = await fetch("https://restcountries.com/v3.1/all");
+    const response = await fetch("https://restcountries.com/v3.1/all", {
+      agent: new https.Agent({
+        rejectUnauthorized: false,
+      }),
+    });
 
     if (!response.ok) {
       return {
@@ -13,7 +16,6 @@ exports.handler = async function () {
     }
 
     const data = await response.json();
-
     return {
       statusCode: 200,
       body: JSON.stringify(data),
