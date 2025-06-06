@@ -1,0 +1,3 @@
+- [Github repository](https://github.com/Jennyhaddad/Flag-app)
+- [Deployat projekt](https://flag-app-project.netlify.app/)
+- [Deployat projekt](https://flag-8xmc18vx3-jenny-haddads-projects.vercel.app/)

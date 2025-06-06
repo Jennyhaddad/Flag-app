@@ -7,19 +7,11 @@ const useCountries = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const url = "https://restcountries.com/v3.1/all";
-
-
-
+    const url = "/.netlify/functions/getCountries";
 
     const fetchCountries = async () => {
       try {
-        const response = await fetch(url, {
-          headers: {
-            Accept: "application/json",
-          },
-        });
-        
+        const response = await fetch(url);
 
         console.log("Response object:", response);
 
@@ -30,7 +22,6 @@ const useCountries = () => {
         const data = await response.json();
 
         console.log("Fetching countries from:", url);
-
 
         setCountries(data);
       } catch (err) {

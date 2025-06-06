@@ -2,6 +2,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import darkLogo from "../assets/logo-dark.png";
 import lightLogo from "../assets/logo-light.png"; 
+import React from "react";
 
 const RootLayout = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
