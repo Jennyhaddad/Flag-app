@@ -1,12 +1,8 @@
-const https = require("https");
+const fetch = require("node-fetch");
 
 exports.handler = async function () {
   try {
-    const response = await fetch("https://restcountries.com/v3.1/all", {
-      agent: new https.Agent({
-        rejectUnauthorized: false,
-      }),
-    });
+    const response = await fetch("https://restcountries.com/v3.1/all");
 
     if (!response.ok) {
       return {
