@@ -10,7 +10,11 @@ const CountryCard = ({ country }) => {
               <h4>{country.name.common}</h4>
               <p><strong>Capital: </strong>{country.capital ? country.capital[0] : 'N/A'}</p>
               <p><strong>Region: </strong>{country.region}</p>
-              <p className="population"><strong>Population: </strong>{country.population.toLocaleString()}</p>
+              <p className="population">
+                <strong>Population: </strong>
+                {country.population != null ? country.population.toLocaleString() : "N/A"}
+              </p>
+
           </div>
 
       </div>
