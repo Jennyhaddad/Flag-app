@@ -2,13 +2,13 @@ const fetch = require("node-fetch");
 
 exports.handler = async function () {
   try {
-    const response = await fetch("https://restcountries.com/v3.1/all", {
+    const response = await fetch("https://restcountries.com/v2/all", {
       headers: {
         "User-Agent": "FlagApp/1.0",
         "Accept": "application/json"
       }
     });
-
+    
     if (!response.ok) {
       return {
         statusCode: response.status,
