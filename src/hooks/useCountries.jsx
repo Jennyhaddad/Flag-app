@@ -7,7 +7,8 @@ const useCountries = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const url = "https://restcountries.com/v3.1/all";
+    const url = "https://restcountries.com/v3.1/all?fields=name,flags,region";
+    console.log("API URL som faktiskt används:", url); // ✅ LOGGA DIREKT EFTER URL-DECLARATIONEN
 
     const fetchCountries = async () => {
       try {
@@ -18,6 +19,8 @@ const useCountries = () => {
         }
 
         const data = await response.json();
+        console.log("Countries fetched:", data.length); // ✅ LOGGA NÄR DATA KOMMIT IN
+
         setCountries(data);
       } catch (err) {
         console.error("API Error:", err);
