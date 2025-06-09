@@ -2,7 +2,7 @@
 body {
   background-color: #fff;;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-  padding: 0px;
+  padding-top: 5px;
   margin: 0px;
   font-family: 'Open Sans', sans-serif;
   min-height: 100vh
@@ -27,11 +27,12 @@ body.dark-mode {
 .navbar {
   display: flex;
   justify-content: space-between;
- position: fixed;
+  position: fixed;
+  z-index: 1000;
   top: 0;           
   left: 0; 
   background-color: #fff;
-  height: 60px; 
+  height: 55px; 
   padding: 5px 10px; 
   font-size: 12px; 
   width: 100%;  
@@ -46,7 +47,7 @@ body.dark-mode {
 }
 
 .titel {
-  margin-left: 100px;
+  margin-left: 90px;
   position:static;
   color: #4d4d4d;
   font-weight: lighter;
@@ -88,10 +89,8 @@ margin: 20px;
   position: relative;
   margin-right: 25px;
   display: inline-block;
-  margin-left: 10px;
- 
-}
 
+}
 
 .continent-select {
   padding-right: 24px; 
@@ -110,7 +109,6 @@ margin: 20px;
 }
 
 
-
 .search-input {
   width: 360px;
   height: 55px;
@@ -119,8 +117,12 @@ margin: 20px;
   position: relative;
   display: inline-block;
   border-radius: 5px;
+  background-color: ;
 }
 
+.dark-mode .search-input {
+  color: #fff;
+}
 
 .dark-mode .search-input {
   background-color: #202C36;
@@ -128,11 +130,6 @@ margin: 20px;
   }
 
    
-.dark-mode .search-input::placeholder {
-  color: #fff;
-  
-}
-
 
 .dark-mode .continent-select {
   background-color:#202C36;
@@ -145,6 +142,7 @@ margin: 20px;
   width: 180px;
   height: 55px;
   padding-right: 20px;
+  margin-right: -7px;
   color: grey;
   font-size: 16px;
   cursor: pointer;
@@ -177,6 +175,7 @@ margin: 20px;
 .country-card {
   width: 90%;
   height: 90%;
+  margin-left: 5.5px;
   object-fit: contain;
   background-color: #fff;
   border-radius: 6px;
@@ -412,13 +411,13 @@ color: #F2F2F2;
 
    .search-input {
     width: 300px;
-    margin-left: -22px;
-    font-size: 12px;
+    margin-left: -24px;
+ 
   }
 
   .continent-select {
     width: 150px;
-    margin-left: -145px; 
+    margin-left: -157px; 
   }
 
   .dropdown-arrow {
@@ -434,7 +433,7 @@ color: #F2F2F2;
   .country-card {
     width: auto;
     height: auto;
-    margin-left: -30px;
+    margin-left: -23px;
     padding-bottom: 5px;
   }
   
