@@ -1,4 +1,3 @@
-
 body {
   background-color: #fff;;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
@@ -47,7 +46,7 @@ body.dark-mode {
 }
 
 .titel {
-  margin-left: 90px;
+  margin-left: 100px;
   position:static;
   color: #4d4d4d;
   font-weight: lighter;
@@ -113,11 +112,11 @@ margin: 20px;
   width: 360px;
   height: 55px;
   padding-left: 10px;
+  margin-left: 10px;
   font-size: 16px;
-  position: relative;
   display: inline-block;
   border-radius: 5px;
-  background-color: ;
+  
 }
 
 .dark-mode .search-input {
@@ -169,39 +168,53 @@ margin: 20px;
     
     }
 
-/* CountryCard */
+/*CountryCard */
 
 
-.country-card {
-  width: 90%;
+  .country-card {
+  width: 100%; 
   height: 90%;
-  margin-left: 5.5px;
-  object-fit: contain;
   background-color: #fff;
-  border-radius: 6px;
+  border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
   text-align:left;
   cursor: pointer;
-  margin: 0px, 60px;
-  transform: scale(0.9);
+  transform: scale(0.8);
   padding-bottom: 20px;
-  
-}
+
+} 
 
 
 .country-flag {
-  width: 100%; 
-  height: 60%; 
-  
-} 
+  width: 100%;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 5px; 
 
-.card-info {
-  padding-left: 15px;
-  margin-bottom: 15px;
- 
 }
 
+.flag-img {
+  width: 100%;
+  object-fit: contain;
+  display: block;
+} 
+
+
+
+  .card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 15px;
+    margin-bottom: 15px; 
+  }
+    
+  
 
 .country-card p {
   color: #555;
@@ -392,7 +405,7 @@ color: #F2F2F2;
 
   .titel {
     font-size: 20px;
-     margin-left: 18px;
+     margin-left: 25px;
   
   }
 
@@ -403,38 +416,41 @@ color: #F2F2F2;
 
 
   .input-select {
+    display: flex;
+    justify-content:flex-start;
+    align-items: flex-start;
     flex-direction: column;
     gap: 15px;
     box-shadow: none;
     margin-top: -40px;
+    margin-left: -6px; 
   }
 
-   .search-input {
-    width: 300px;
-    margin-left: -24px;
- 
+    .search-input {
+    width: 300px; 
   }
 
   .continent-select {
     width: 150px;
-    margin-left: -157px; 
-  }
+    margin: 0 10px;
+   
+  } 
+
 
   .dropdown-arrow {
-    position: relative;
     top: 50%;
     right: 30px;
     width: 12px;
  
   }
- 
 
 
   .country-card {
     width: auto;
     height: auto;
-    margin-left: -23px;
+    margin-left: -28px;
     padding-bottom: 5px;
+
   }
   
 
@@ -476,7 +492,7 @@ color: #F2F2F2;
   .details-container {
     display: flex;
     flex-direction: column;
-j
+
   }
   
   .country-title {
@@ -518,7 +534,6 @@ j
     display: flex;
     justify-content: left;
     margin-bottom: 100px;
+    flex-wrap: wrap
 }
 }
-
-
