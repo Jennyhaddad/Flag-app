@@ -1,8 +1,8 @@
 body {
   background-color: #fff;;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-  padding-top: 5px;
   margin: 0px;
+  padding: 0px;
   font-family: 'Open Sans', sans-serif;
   min-height: 100vh
 }
@@ -46,7 +46,7 @@ body.dark-mode {
 }
 
 .titel {
-  margin-left: 100px;
+  margin-left: 92px;
   position:static;
   color: #4d4d4d;
   font-weight: lighter;
@@ -63,7 +63,7 @@ body.dark-mode {
   background: none;
   border: none;
   outline: none;
-  margin-right: 80px;
+  margin-right: 65px;
   color: #4d4d4d;
   padding: 8px 50px;
   font-size: 14px;
@@ -86,7 +86,7 @@ margin: 20px;
 
 .select-wrapper {
   position: relative;
-  margin-right: 25px;
+  margin-right: 10px;
   display: inline-block;
 
 }
@@ -96,7 +96,7 @@ margin: 20px;
   appearance: none; 
   -webkit-appearance: none;
   -moz-appearance: none;
-  padding-left: 15px;
+  padding-left: 20px;
 }
 
 .dropdown-arrow {
@@ -112,7 +112,7 @@ margin: 20px;
   width: 360px;
   height: 55px;
   padding-left: 10px;
-  margin-left: 10px;
+  margin-left: 5px;
   font-size: 16px;
   display: inline-block;
   border-radius: 5px;
@@ -154,7 +154,6 @@ margin: 20px;
 .countries-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  margin: 0px;
 }
 
 .countries-list h4 {
@@ -179,7 +178,7 @@ margin: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align:left;
   cursor: pointer;
-  transform: scale(0.8);
+  transform: scale(0.85);
   padding-bottom: 20px;
 
 } 
@@ -411,7 +410,7 @@ color: #F2F2F2;
 
   .color-mode {
   font-size: 14px;
-  margin-left: 50px;
+  margin-left: 55px;
   }
 
 
@@ -432,7 +431,7 @@ color: #F2F2F2;
 
   .continent-select {
     width: 150px;
-    margin: 0 10px;
+    margin: 0 6px;
    
   } 
 
